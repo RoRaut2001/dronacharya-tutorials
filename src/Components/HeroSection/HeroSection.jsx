@@ -41,7 +41,7 @@ export default function HeroSection(){
 
                 <div className="w-[470px] h-[470px]  rounded-full overflow-hidden flex items-center justify-center shadow-2xl relative">
                     <img
-                        src="src/assets/Images/hero_section_image1.jpg"
+                        src="../../../public/assets/Images/hero_section_image1.jpg"
                         alt="Business Solutions"
                         className="w-full h-full object-cover"
                     />
