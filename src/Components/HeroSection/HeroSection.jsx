@@ -34,7 +34,7 @@ export default function HeroSection(){
 
                 <div className="w-[300px] h-[300px] lg:w-[470px] lg:h-[470px] rounded-full overflow-hidden flex items-center justify-center shadow-2xl relative">
                     <img
-                        src='src/assets/Images/hero_section_image1.jpg'
+                        src='/hero_section_image1.jpg'
                         alt="Expert Tutoring"
                         className="w-full h-full object-cover"
                     />

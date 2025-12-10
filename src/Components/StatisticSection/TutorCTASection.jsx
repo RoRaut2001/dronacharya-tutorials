@@ -60,7 +60,7 @@ export default function TutorCTASection() {
 
                             {/* Image fills the container with object-cover */}
                             <img
-                                src={TUTOR_CTA_IMAGE}
+                                src= '/looking_to_teach.jpeg'
                                 alt="Happy tutor working online"
                                 className="absolute inset-0 w-full h-full object-cover rounded-3xl lg:rounded-l-none z-10"
                             />
