@@ -1,5 +1,5 @@
 import React from 'react';
-import DronacharyaLogo from '../../../public/assets/Images/logo.jpg';
+import DronacharyaLogo from '../../assets/Images/logo.jpg';
 
 export default function Navbar() {
     return (
