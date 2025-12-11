@@ -82,15 +82,15 @@ export default function StatsSection() {
     ];
 
     return (
-        <section className="bg-white py-12 px-12 shadow-inner border-t border-gray-100">
-            <div className="max-w-6xl mx-auto flex justify-around items-center">
+        <section className="bg-white py-12 px-4 sm:px-6 lg:px-12 shadow-inner border-t border-gray-100">
+            <div className="max-w-6xl mx-auto flex flex-wrap justify-around items-center gap-y-8">
                 {stats.map((stat, index) => (
-                    <div key={index} className="text-center">
+                    <div key={index} className="text-center w-1/2 sm:w-auto px-2">
                         <AnimatedCounter
                             value={stat.value}
-                            className="text-5xl font-extrabold text-blue-700"
+                            className="text-4xl sm:text-5xl font-extrabold text-blue-700"
                         />
-                        <p className="text-lg text-gray-600 mt-2">{stat.label}</p>
+                        <p className="text-sm sm:text-lg text-gray-600 mt-2">{stat.label}</p>
                     </div>
                 ))}
             </div>

@@ -25,20 +25,14 @@ export default function Footer() {
         },
     ];
 
-    // Custom colors from the Navbar/Logo for the brand elements
-    const primaryColor = '#4b38ef';
     const secondaryColor = '#35b9a1';
 
     return (
-        // Footer: Contains the main dark background and internal top padding
         <footer className="bg-[#0f172a] pt-16">
-            {/* Max-width container, NO horizontal padding to remove container margins */}
             <div className="max-w-7xl mx-auto">
-                {/* Grid Container: ADD horizontal padding here for content spacing */}
                 <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-12 gap-y-10 pb-12 px-4 sm:px-6 lg:px-8">
 
-                    {/* Column 1: Logo and Description */}
-                    <div className="col-span-2 md:col-span-4 lg:col-span-4 pr-10">
+                    <div className="col-span-2 md:col-span-4 lg:col-span-4 pr-0 md:pr-10">
                         <div className="flex items-center space-x-2 mb-4">
                             <span className="font-extrabold text-2xl text-white">
                                 <span style={{ color: secondaryColor }}>Dro</span>nacharya
@@ -48,7 +42,6 @@ export default function Footer() {
                             Connecting students with the best tutors across India. Find the perfect match for your learning needs.
                         </p>
 
-                        {/* Social Icons */}
                         <div className="flex space-x-4">
                             <a href="#" className="text-gray-400 hover:text-white transition-colors">
                                 <Facebook className="w-6 h-6" />
@@ -62,9 +55,7 @@ export default function Footer() {
                         </div>
                     </div>
 
-                    {/* Columns 2-3: Quick Links and For Users */}
                     {footerData.map((section, index) => (
-                        // Added offset padding to grid items to align with wrapper padding
                         <div key={index} className="col-span-1 md:col-span-2 lg:col-span-2 lg:pl-4">
                             <h6 className="font-bold text-lg text-white mb-4">
                                 {section.title}
@@ -81,7 +72,6 @@ export default function Footer() {
                         </div>
                     ))}
 
-                    {/* Column 4: Contact Us */}
                     <div className="col-span-2 md:col-span-4 lg:col-span-4 lg:pl-4">
                         <h6 className="font-bold text-lg text-white mb-4">
                             Contact Us
@@ -114,7 +104,6 @@ export default function Footer() {
                 </div>
             </div>
 
-            {/* Copyright Section */}
             <div className="border-t border-gray-700 py-4 bg-[#0f172a]">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <p className="text-gray-400 text-sm">
