@@ -86,7 +86,6 @@ export default function Navbar() {
                             </li>
                         ))}
                         <li>
-                            /**** Login Button in the mobile menu (full width) ****/
                             <button
                                 className="w-full bg-[#35b9a1] text-white px-5 py-2 mt-4 rounded-md font-semibold text-base hover:bg-[#2ea28d] transition-colors shadow-md"
                                 onClick={() => setIsOpen(false)}
