@@ -82,7 +82,7 @@ export default function StatsSection() {
     ];
 
     return (
-        <section className="bg-white py-12 px-4 sm:px-6 lg:px-12 shadow-inner border-t border-gray-100">
+        <section className="bg-white py-5 px-4 sm:px-6 lg:px-12 shadow-inner border-t border-gray-100">
             <div className="max-w-6xl mx-auto flex flex-wrap justify-around items-center gap-y-8">
                 {stats.map((stat, index) => (
                     <div key={index} className="text-center w-1/2 sm:w-auto px-2">
