@@ -1,4 +1,3 @@
-// src/Components/Modal/BookDemoModal.jsx
 import React, { useState } from 'react';
 import { X, ChevronDown } from 'lucide-react';
 
@@ -33,39 +32,35 @@ const subjectsByClass = {
     'Arts': ['Marathi', 'English', 'Hindi', 'Sanskrit', 'History'],
 };
 
-// Helper function to find the full label for the selected value
 const getClassLabel = (value) => {
     const item = groupedClassesData.find(d => d.value === value);
     return item ? item.label : "Select Class/Course";
 };
 
-
 export default function BookDemoModal({ isOpen, onClose }) {
-    if (!isOpen) return null;
 
+    // ✅ Hooks must be at top level (Fixes ESLint error)
     const [selectedClassValue, setSelectedClassValue] = useState('');
     const [selectedSubject, setSelectedSubject] = useState('');
     const [isClassDropdownOpen, setIsClassDropdownOpen] = useState(false);
 
+    if (!isOpen) return null;
+
     const subjectsToDisplay = subjectsByClass[selectedClassValue] || [];
     const baseSelectClasses = "w-full appearance-none bg-white text-gray-800 focus:outline-none text-base sm:text-lg cursor-pointer font-medium";
 
-
     const handleClassSelection = (value) => {
         setSelectedClassValue(value);
-        setSelectedSubject(''); // Reset subject
+        setSelectedSubject('');
         setIsClassDropdownOpen(false);
     };
 
     return (
-        // Overlay with negligible blur
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-white/5 backdrop-blur-sm transition-opacity duration-300" onClick={onClose}>
-            {/* Modal Content Box: Added max-h-[90vh] and overflow-y-auto for entire content scrolling */}
             <div
                 className="bg-white rounded-3xl shadow-2xl max-w-sm w-full relative transform transition-all duration-300 max-h-[90vh] overflow-y-auto"
                 onClick={(e) => e.stopPropagation()}
             >
-                {/* Close Button: Positioned absolutely within the scrollable container */}
                 <button
                     onClick={onClose}
                     className="absolute top-4 right-4 text-white hover:text-gray-200 bg-black/30 p-1 rounded-full transition z-30"
@@ -73,7 +68,6 @@ export default function BookDemoModal({ isOpen, onClose }) {
                     <X className="w-5 h-5" />
                 </button>
 
-                {/* Image Section (Now part of the scrollable content) */}
                 <div className="w-full relative">
                     <img
                         src='/looking_to_teach.jpeg'
@@ -82,9 +76,7 @@ export default function BookDemoModal({ isOpen, onClose }) {
                     />
                 </div>
 
-                {/* Scrollable Form Content: Removed explicit scrolling and margin/padding adjustments, now uses standard padding */}
                 <div className="p-6 sm:p-10">
-                    {/* Text Content */}
                     <div className="text-center mb-6">
                         <h2 className="text-3xl font-extrabold text-gray-900 mb-2">
                             Book Your Free Demo
@@ -94,8 +86,7 @@ export default function BookDemoModal({ isOpen, onClose }) {
                         </p>
                     </div>
 
-
-                    {/* Custom Dropdown 1: Select Class (with separators) */}
+                    {/* CLASS SELECT DROPDOWN */}
                     <div className="relative mb-4" onBlur={() => setIsClassDropdownOpen(false)}>
                         <div
                             className="flex items-center justify-between p-4 bg-white border border-gray-200 shadow-sm rounded-xl cursor-pointer"
@@ -118,7 +109,7 @@ export default function BookDemoModal({ isOpen, onClose }) {
                                         ) : (
                                             <div
                                                 className={`px-4 py-3 text-gray-900 text-base cursor-pointer hover:bg-blue-50/70 transition-colors ${selectedClassValue === data.value ? 'bg-blue-100 font-semibold' : ''}`}
-                                                onMouseDown={(e) => { // Use onMouseDown to prevent onBlur from closing the list immediately
+                                                onMouseDown={(e) => {
                                                     e.preventDefault();
                                                     handleClassSelection(data.value);
                                                 }}
@@ -132,7 +123,7 @@ export default function BookDemoModal({ isOpen, onClose }) {
                         )}
                     </div>
 
-                    {/* Simple Dropdown 2: Select Subject (Conditional) */}
+                    {/* SUBJECT SELECT */}
                     {selectedClassValue && (
                         <div className="relative mb-8 shadow-sm rounded-xl border border-gray-200">
                             <select
@@ -149,7 +140,6 @@ export default function BookDemoModal({ isOpen, onClose }) {
                         </div>
                     )}
 
-                    {/* Book Demo Button (Only active if both are selected) */}
                     <button
                         className={`flex items-center justify-center w-full text-white px-8 py-4 font-semibold rounded-xl transition-colors
                             ${selectedClassValue && selectedSubject
